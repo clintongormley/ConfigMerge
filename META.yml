@@ -1,0 +1,37 @@
+---
+abstract: "load a configuration directory tree containing\nYAML, JSON, XML, Perl, INI or Config::General files"
+author:
+  - 'Clinton Gormley <drtech@cpan.org>'
+build_requires:
+  Test::More: 0
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3603'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Config-Merge
+provides:
+  Config::Merge:
+    file: lib/Config/Merge.pm
+    version: 1.01
+  Config::Merge::Perl:
+    file: lib/Config/Merge/Perl.pm
+recommends:
+  Config::General: 0
+  Config::Tiny: 0
+  JSON: 0
+  JSON::XS: 0
+  XML::Simple: 0
+  YAML: 0
+  YAML::Syck: 0
+requires:
+  Config::Any: 0.07
+  File::Spec: 0
+  Storable: 0
+resources:
+  bugtracker: http://github.com/clintongormley/ConfigMerge/issues
+  license: http://dev.perl.org/licenses/
+  repository: http://github.com/clintongormley/ConfigMerge
+version: 1.01

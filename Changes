@@ -1,0 +1,8 @@
+1.01    12 Oct 2010  Removed dependency on Data::Alias - thanks to Graham Barr
+                     for the patch.
+                     Restructured the module to use the standard CPAN layout
+                     with lib/, and switched to Module::Build
+
+1.00    22 Oct 2007  First release of Config::Merge to CPAN.
+                     Replaces Config::Loader
+
