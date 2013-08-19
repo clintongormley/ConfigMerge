@@ -634,8 +634,11 @@ sub _load_config {
     my $config = {};
 
     my @local;
+    
+    my $pattern = File::Spec->catfile( $dir, '*' );    
+    $pattern =~ s/\s/\\ /g;    
     my $config_files = $self->{sort}
-        ->( $self, [ glob( File::Spec->catfile( $dir, '*' ) ) ] );
+        ->( $self, [ glob( $pattern ) ] );
 
     my $is_local = $self->{is_local};
     $self->debug( '', "Entering dir: $dir", '-' x ( length($dir) + 14 ) );
