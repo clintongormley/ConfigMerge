@@ -1,3 +1,6 @@
+1.02    16 Aug 2014  Handle spaces in path names - thanks to oliwel for the
+                     patch.
+
 1.01    12 Oct 2010  Removed dependency on Data::Alias - thanks to Graham Barr
                      for the patch.
                      Restructured the module to use the standard CPAN layout
