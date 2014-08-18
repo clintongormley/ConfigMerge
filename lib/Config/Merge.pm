@@ -4,6 +4,8 @@ use strict;
 use warnings FATAL => 'all', NONFATAL => 'redefine';
 
 use File::Spec();
+use File::Glob ':bsd_glob';
+
 use Storable();
 use overload (
     '&{}' => sub {
@@ -385,7 +387,7 @@ sub new {
     bless( $self, $class );
 
     my $params
-        = @_ > 1 ? {@_}
+        = @_ > 1              ? {@_}
         : ref $_[0] eq 'HASH' ? shift()
         :                       { path => shift() };
 
@@ -412,7 +414,7 @@ sub new {
         return $self;
     }
     else {
-        die("Configuration directory '$path' not readable when creating a new "
+        die( "Configuration directory '$path' not readable when creating a new "
                 . "'$class' object" );
     }
     return $self;
@@ -635,10 +637,8 @@ sub _load_config {
 
     my @local;
 
-    my $pattern = File::Spec->catfile( $dir, '*' );
-    $pattern =~ s/\s/\\ /g;
     my $config_files = $self->{sort}
-        ->( $self, [ glob( $pattern ) ] );
+        ->( $self, [ glob( File::Spec->catfile( $dir, '*' ) ) ] );
 
     my $is_local = $self->{is_local};
     $self->debug( '', "Entering dir: $dir", '-' x ( length($dir) + 14 ) );
