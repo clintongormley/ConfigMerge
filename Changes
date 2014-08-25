@@ -1,3 +1,5 @@
+1.04    25 Aug 2014  Old File::Glob doesn't export :bsd_glob.
+
 1.03    18 Aug 2014  Switch to using bsd_glob to handle spaces in paths
                      on Windows.
 
